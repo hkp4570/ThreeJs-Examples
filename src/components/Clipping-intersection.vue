@@ -4,6 +4,7 @@
 
 <script>
 import * as THREE from 'three';
+import GUI from 'lil-gui';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js'
 
 let renderer, scene, camera;
@@ -15,7 +16,7 @@ const clipPlanes = [
 const params = {
   clipIntersection: true,
   planeConstant: 0,
-  showHelpers: false,
+  showHelpers: true,
   alphaToCoverage: true,
 };
 export default {
@@ -24,6 +25,7 @@ export default {
   },
   mounted() {
     this.init();
+    this.render();
   },
   methods: {
     init() {
@@ -33,7 +35,6 @@ export default {
       renderer.localClippingEnabled = true;
 
       scene = new THREE.Scene();
-      console.log(scene);
 
       camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 200);
       camera.position.set(-1.5, 2.5, 3.0);
@@ -64,7 +65,53 @@ export default {
         group.add(new THREE.Mesh(geometry, material));
       }
       scene.add(group);
-      this.render();
+
+      // helper
+      const helper = new THREE.Group();
+      helper.add(new THREE.PlaneHelper(clipPlanes[0], 2, 0xff0000));
+      helper.add(new THREE.PlaneHelper(clipPlanes[1], 2, 0x00ff00));
+      helper.add(new THREE.PlaneHelper(clipPlanes[2], 2, 0x0000ff));
+      scene.add(helper);
+
+      // gui
+      const gui = new GUI();
+      // 透明度抗锯齿
+      gui.add(params, 'alphaToCoverage').onChange(value => {
+        group.children.forEach(g => {
+          g.material.alphaToCoverage = Boolean(value);
+          g.material.needsUpdate = true;
+        })
+        this.render();
+      })
+      // 裁剪平面的行为
+      gui.add(params, 'clipIntersection').name('clip intersection').onChange(value => {
+        const children = group.children;
+        for (let i = 0; i < children.length; i++) {
+          children[i].material.clipIntersection = value;
+        }
+        this.render();
+      })
+      // 平面到原点的距离
+      gui.add(params, 'planeConstant',-1,1).step(0.01).name('plane constant').onChange(value => {
+        clipPlanes.forEach(c => {
+          c.constant = value;
+        })
+        this.render();
+      })
+      // 辅助平面
+      gui.add(params, 'showHelpers').name('show helpers').onChange(value => {
+        helper.visible = Boolean(value);
+        this.render();
+      })
+
+      window.addEventListener('resize', this.windowResize);
+
+    },
+    windowResize(){
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        this.render();
     },
     render() {
       renderer.render(scene, camera);
