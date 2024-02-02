@@ -21,11 +21,16 @@ const params = {
 };
 export default {
   data() {
-    return {}
+    return {
+      gui: null
+    }
   },
   mounted() {
     this.init();
     this.render();
+  },
+  destroyed() {
+    this.gui && this.gui.destroy();
   },
   methods: {
     init() {
@@ -74,9 +79,9 @@ export default {
       scene.add(helper);
 
       // gui
-      const gui = new GUI();
+      this.gui = new GUI();
       // 透明度抗锯齿
-      gui.add(params, 'alphaToCoverage').onChange(value => {
+      this.gui.add(params, 'alphaToCoverage').onChange(value => {
         group.children.forEach(g => {
           g.material.alphaToCoverage = Boolean(value);
           g.material.needsUpdate = true;
@@ -84,7 +89,7 @@ export default {
         this.render();
       })
       // 裁剪平面的行为
-      gui.add(params, 'clipIntersection').name('clip intersection').onChange(value => {
+      this.gui.add(params, 'clipIntersection').name('clip intersection').onChange(value => {
         const children = group.children;
         for (let i = 0; i < children.length; i++) {
           children[i].material.clipIntersection = value;
@@ -92,14 +97,14 @@ export default {
         this.render();
       })
       // 平面到原点的距离
-      gui.add(params, 'planeConstant',-1,1).step(0.01).name('plane constant').onChange(value => {
+      this.gui.add(params, 'planeConstant', -1, 1).step(0.01).name('plane constant').onChange(value => {
         clipPlanes.forEach(c => {
           c.constant = value;
         })
         this.render();
       })
       // 辅助平面
-      gui.add(params, 'showHelpers').name('show helpers').onChange(value => {
+      this.gui.add(params, 'showHelpers').name('show helpers').onChange(value => {
         helper.visible = Boolean(value);
         this.render();
       })
@@ -107,11 +112,11 @@ export default {
       window.addEventListener('resize', this.windowResize);
 
     },
-    windowResize(){
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        this.render();
+    windowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      this.render();
     },
     render() {
       renderer.render(scene, camera);
