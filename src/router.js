@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import ClippingIntersection from "@/views/Clipping/Clipping-intersection.vue";
 import GeometryCube from '@/views/Geometry/Cube.vue';
 import MathOrientationTransform from '@/views/Math/OrientationTransform.vue';
+import Camera from "@/views/Camera/Camera.vue";
 
 export const routes = [
     {
@@ -16,9 +17,14 @@ export const routes = [
         component: GeometryCube,
     },
     {
-        path: '/MathOrientationTransform',
-        name: 'MathOrientationTransform',
+        path: '/mathOrientationTransform',
+        name: 'mathOrientationTransform',
         component: MathOrientationTransform,
+    },
+    {
+        path: '/camera',
+        name: 'camera',
+        component: Camera,
     }
 ]
 
