@@ -4,6 +4,7 @@ import ClippingIntersection from "@/views/Clipping/Clipping-intersection.vue";
 import GeometryCube from '@/views/Geometry/Cube.vue';
 import MathOrientationTransform from '@/views/Math/OrientationTransform.vue';
 import Camera from "@/views/Camera/Camera.vue";
+import HappySpringFestival from "@/views/HappySpringFestival/index.vue";
 
 export const routes = [
     {
@@ -25,6 +26,11 @@ export const routes = [
         path: '/camera',
         name: 'camera',
         component: Camera,
+    },
+    {
+        path: '/happySpringFestival',
+        name:'happySpringFestival',
+        component: HappySpringFestival
     }
 ]
 
