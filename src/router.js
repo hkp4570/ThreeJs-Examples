@@ -5,6 +5,7 @@ import GeometryCube from '@/views/Geometry/Cube.vue';
 import MathOrientationTransform from '@/views/Math/OrientationTransform.vue';
 import Camera from "@/views/Camera/Camera.vue";
 import HappySpringFestival from "@/views/HappySpringFestival/index.vue";
+import Billboards from "@/views/Points/Billboards.vue";
 
 export const routes = [
     {
@@ -31,6 +32,11 @@ export const routes = [
         path: '/happySpringFestival',
         name:'happySpringFestival',
         component: HappySpringFestival
+    },
+    {
+        path:'/billboard',
+        name:'billboard',
+        component: Billboards,
     }
 ]
 
