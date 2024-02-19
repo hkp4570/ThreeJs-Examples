@@ -7,6 +7,7 @@ import Camera from "@/views/Camera/Camera.vue";
 import HappySpringFestival from "@/views/HappySpringFestival/index.vue";
 import Billboards from "@/views/Points/Billboards.vue";
 import Layers from "@/views/webgl/Layers.vue";
+import InteractiveCube from "@/views/webgl/InteractiveCube.vue";
 
 export const routes = [
     {
@@ -43,6 +44,11 @@ export const routes = [
         path: '/layers',
         name: 'layers',
         component: Layers,
+    },
+    {
+        path: '/interactiveCube',
+        name: 'interactiveCube',
+        component: InteractiveCube,
     }
 ]
 
