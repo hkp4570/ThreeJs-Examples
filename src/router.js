@@ -8,6 +8,7 @@ import HappySpringFestival from "@/views/HappySpringFestival/index.vue";
 import Billboards from "@/views/Points/Billboards.vue";
 import Layers from "@/views/webgl/Layers.vue";
 import InteractiveCube from "@/views/webgl/InteractiveCube.vue";
+import InteractiveCubeGpu from "@/views/webgl/InteractiveCubeGpu.vue";
 
 export const routes = [
     {
@@ -49,6 +50,12 @@ export const routes = [
         path: '/interactiveCube',
         name: 'interactiveCube',
         component: InteractiveCube,
+    },
+    {
+        path: '/interactiveCubeGpu',
+        name: 'interactiveCubeGpu',
+        component: InteractiveCubeGpu,
+
     }
 ]
 
