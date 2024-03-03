@@ -9,6 +9,7 @@ import Billboards from "@/views/Points/Billboards.vue";
 import Layers from "@/views/webgl/Layers.vue";
 import InteractiveCube from "@/views/webgl/InteractiveCube.vue";
 import InteractiveCubeGpu from "@/views/webgl/InteractiveCubeGpu.vue";
+import Sprites from '@/views/Points/Sprties.vue';
 
 export const routes = [
     {
@@ -55,7 +56,11 @@ export const routes = [
         path: '/interactiveCubeGpu',
         name: 'interactiveCubeGpu',
         component: InteractiveCubeGpu,
-
+    },
+    {
+        path: '/sprites',
+        name: 'sprites',
+        component: Sprites,
     }
 ]
 
