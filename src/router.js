@@ -10,6 +10,7 @@ import Layers from "@/views/webgl/Layers.vue";
 import InteractiveCube from "@/views/webgl/InteractiveCube.vue";
 import InteractiveCubeGpu from "@/views/webgl/InteractiveCubeGpu.vue";
 import Sprites from '@/views/Points/Sprties.vue';
+import DrawingLine from "@/views/DrawingLine.vue";
 
 export const routes = [
     {
@@ -61,6 +62,11 @@ export const routes = [
         path: '/sprites',
         name: 'sprites',
         component: Sprites,
+    },
+    {
+        path: '/drawingLine',
+        name: 'drawingLine',
+        component: DrawingLine,
     }
 ]
 
