@@ -11,6 +11,8 @@ import InteractiveCube from "@/views/webgl/InteractiveCube.vue";
 import InteractiveCubeGpu from "@/views/webgl/InteractiveCubeGpu.vue";
 import Sprites from '@/views/Points/Sprties.vue';
 import DrawingLine from "@/views/DrawingLine.vue";
+import Indexed from "@/views/Line/Indexed.vue";
+import Lines from "@/views/Line/Lines.vue";
 
 export const routes = [
     {
@@ -67,6 +69,16 @@ export const routes = [
         path: '/drawingLine',
         name: 'drawingLine',
         component: DrawingLine,
+    },
+    {
+        path: '/indexed',
+        name:'indexed',
+        component: Indexed,
+    },
+    {
+        path:'/lines',
+        name:'lines',
+        component: Lines
     }
 ]
 
