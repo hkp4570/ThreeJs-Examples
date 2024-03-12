@@ -13,6 +13,7 @@ import Sprites from '@/views/Points/Sprties.vue';
 import DrawingLine from "@/views/DrawingLine.vue";
 import Indexed from "@/views/Line/Indexed.vue";
 import Lines from "@/views/Line/Lines.vue";
+import Dashed from "@/views/Line/Dashed.vue";
 
 export const routes = [
     {
@@ -79,6 +80,11 @@ export const routes = [
         path:'/lines',
         name:'lines',
         component: Lines
+    },
+    {
+        path: '/dashed',
+        name: 'dashed',
+        component: Dashed,
     }
 ]
 

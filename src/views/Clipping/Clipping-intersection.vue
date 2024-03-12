@@ -35,8 +35,11 @@ export default {
   methods: {
     init() {
       renderer = new THREE.WebGLRenderer({antialias: true, canvas: document.getElementById('mainCanvas')});
+      // 设置设备像素比
       renderer.setPixelRatio(window.devicePixelRatio);
+      // canvas画布大小
       renderer.setSize(window.innerWidth, window.innerHeight);
+      // 启用局部裁剪，
       renderer.localClippingEnabled = true;
 
       scene = new THREE.Scene();
@@ -62,9 +65,9 @@ export default {
         const geometry = new THREE.SphereGeometry(i / 30, 48, 24);
         const material = new THREE.MeshPhongMaterial({
           color: new THREE.Color().setHSL(Math.random(), 0.5, 0.5, THREE.SRGBColorSpace),
-          side: THREE.DoubleSide,
-          clippingPlanes: clipPlanes,
-          clipIntersection: params.clipIntersection,
+          side: THREE.DoubleSide, // 定义渲染哪一面
+          clippingPlanes: clipPlanes, // 定义裁剪平面
+          clipIntersection: params.clipIntersection, // 更改裁剪平面的行为
           alphaToCoverage: true,
         })
         group.add(new THREE.Mesh(geometry, material));
