@@ -15,6 +15,7 @@ import Indexed from "@/views/Line/Indexed.vue";
 import Lines from "@/views/Line/Lines.vue";
 import Dashed from "@/views/Line/Dashed.vue";
 import Text from '@/views/Geometry/Text.vue';
+import Colors from "@/views/Geometry/Colors.vue";
 
 export const routes = [
     {
@@ -91,6 +92,11 @@ export const routes = [
         path: '/text',
         name: 'text',
         component: Text,
+    },
+    {
+        path: '/colors',
+        name: 'colors',
+        component: Colors
     }
 ]
 
