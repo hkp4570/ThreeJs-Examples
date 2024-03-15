@@ -14,6 +14,7 @@ import DrawingLine from "@/views/DrawingLine.vue";
 import Indexed from "@/views/Line/Indexed.vue";
 import Lines from "@/views/Line/Lines.vue";
 import Dashed from "@/views/Line/Dashed.vue";
+import Text from '@/views/Geometry/Text.vue';
 
 export const routes = [
     {
@@ -38,12 +39,12 @@ export const routes = [
     },
     {
         path: '/happySpringFestival',
-        name:'happySpringFestival',
+        name: 'happySpringFestival',
         component: HappySpringFestival
     },
     {
-        path:'/billboard',
-        name:'billboard',
+        path: '/billboard',
+        name: 'billboard',
         component: Billboards,
     },
     {
@@ -73,18 +74,23 @@ export const routes = [
     },
     {
         path: '/indexed',
-        name:'indexed',
+        name: 'indexed',
         component: Indexed,
     },
     {
-        path:'/lines',
-        name:'lines',
+        path: '/lines',
+        name: 'lines',
         component: Lines
     },
     {
         path: '/dashed',
         name: 'dashed',
         component: Dashed,
+    },
+    {
+        path: '/text',
+        name: 'text',
+        component: Text,
     }
 ]
 
