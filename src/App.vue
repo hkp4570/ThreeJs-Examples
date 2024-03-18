@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <a-layout style="height: 100%">
-      <a-layout-sider theme="light">
+      <a-layout-sider theme="light" style="overflow-y: auto">
           <a-menu mode="inline" :default-selected-keys="currentRouteName" v-model="currentRouteName">
             <a-menu-item :key="route.name" v-for="route of routes">
               <router-link :to="route.path" :exact="true" active-class="" exact-active-class="">{{ route.name }}</router-link>
