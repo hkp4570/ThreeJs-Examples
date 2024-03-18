@@ -17,6 +17,7 @@ import Dashed from "@/views/Line/Dashed.vue";
 import Text from '@/views/Geometry/Text.vue';
 import Colors from "@/views/Geometry/Colors.vue";
 import Convex from "@/views/Geometry/Convex.vue";
+import ControlsOrbit from '@/views/misc/controls_orbit.vue';
 
 export const routes = [
     {
@@ -103,6 +104,11 @@ export const routes = [
         path: '/convex',
         name: 'convex',
         component: Convex
+    },
+    {
+        path: '/controls_orbit',
+        name: 'controls_orbit',
+        component: ControlsOrbit
     }
 ]
 
