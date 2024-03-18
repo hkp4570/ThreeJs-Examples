@@ -16,6 +16,7 @@ import Lines from "@/views/Line/Lines.vue";
 import Dashed from "@/views/Line/Dashed.vue";
 import Text from '@/views/Geometry/Text.vue';
 import Colors from "@/views/Geometry/Colors.vue";
+import Convex from "@/views/Geometry/Convex.vue";
 
 export const routes = [
     {
@@ -97,6 +98,11 @@ export const routes = [
         path: '/colors',
         name: 'colors',
         component: Colors
+    },
+    {
+        path: '/convex',
+        name: 'convex',
+        component: Convex
     }
 ]
 
