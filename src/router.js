@@ -19,6 +19,7 @@ import Colors from "@/views/Geometry/Colors.vue";
 import Convex from "@/views/Geometry/Convex.vue";
 import ControlsOrbit from '@/views/misc/controls_orbit.vue';
 import RaycasterSprite from '@/views/webgl/Raycaster_sprite.vue';
+import InstancingRaycast from '@/views/webgl/Instancing_raycast.vue';
 
 export const routes = [
     {
@@ -115,6 +116,11 @@ export const routes = [
         path: '/raycaster_sprite',
         name: 'raycaster_sprite',
         component: RaycasterSprite
+    },
+    {
+        path: '/instancing_raycast',
+        name: 'instancing_raycast',
+        component: InstancingRaycast
     }
 ]
 
