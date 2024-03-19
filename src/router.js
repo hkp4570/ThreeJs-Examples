@@ -20,6 +20,7 @@ import Convex from "@/views/Geometry/Convex.vue";
 import ControlsOrbit from '@/views/misc/controls_orbit.vue';
 import RaycasterSprite from '@/views/webgl/Raycaster_sprite.vue';
 import InstancingRaycast from '@/views/webgl/Instancing_raycast.vue';
+import InteractiveVoxelpainter from '@/views/webgl/Interactive_voxelpainter.vue';
 
 export const routes = [
     {
@@ -121,6 +122,11 @@ export const routes = [
         path: '/instancing_raycast',
         name: 'instancing_raycast',
         component: InstancingRaycast
+    },
+    {
+        path: '/interactive_voxelpainter',
+        name: 'interactive_voxelpainter',
+        component: InteractiveVoxelpainter
     }
 ]
 
