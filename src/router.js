@@ -22,6 +22,7 @@ import RaycasterSprite from '@/views/webgl/Raycaster_sprite.vue';
 import InstancingRaycast from '@/views/webgl/Instancing_raycast.vue';
 import InteractiveVoxelpainter from '@/views/webgl/Interactive_voxelpainter.vue';
 import InteractiveCubesOrtho from '@/views/webgl/Interactive_cubes_ortho.vue';
+import InteractiveBufferGeometry from '@/views/webgl/Interactive_bufferGeometry.vue';
 
 export const routes = [
     {
@@ -133,6 +134,11 @@ export const routes = [
         path: '/interactive_cubes_ortho',
         name: 'interactive_cubes_ortho',
         component: InteractiveCubesOrtho
+    },
+    {
+        path: '/interactive_bufferGeometry',
+        name: 'interactive_bufferGeometry',
+        component: InteractiveBufferGeometry
     }
 ]
 
