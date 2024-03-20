@@ -21,6 +21,7 @@ import ControlsOrbit from '@/views/misc/controls_orbit.vue';
 import RaycasterSprite from '@/views/webgl/Raycaster_sprite.vue';
 import InstancingRaycast from '@/views/webgl/Instancing_raycast.vue';
 import InteractiveVoxelpainter from '@/views/webgl/Interactive_voxelpainter.vue';
+import InteractiveCubesOrtho from '@/views/webgl/Interactive_cubes_ortho.vue';
 
 export const routes = [
     {
@@ -127,6 +128,11 @@ export const routes = [
         path: '/interactive_voxelpainter',
         name: 'interactive_voxelpainter',
         component: InteractiveVoxelpainter
+    },
+    {
+        path: '/interactive_cubes_ortho',
+        name: 'interactive_cubes_ortho',
+        component: InteractiveCubesOrtho
     }
 ]
 
