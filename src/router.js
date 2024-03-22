@@ -26,137 +26,117 @@ import InteractiveBufferGeometry from '@/views/webgl/Interactive_bufferGeometry.
 import RoadLight from '@/views/道路流光/index.vue';
 import Earth3D from '@/views/3D地球/index.vue';
 import ChinaMap from '@/views/绘制中国地图/index.vue';
+import ExtrudeShapes from '@/views/Geometry/Extrude_shapes.vue';
 
 export const routes = [
     {
         path: '/clippingIntersection',
         name: 'clippingIntersection',
         component: ClippingIntersection,
-    },
-    {
+    }, {
         path: '/geometryCube',
         name: 'geometryCube',
         component: GeometryCube,
-    },
-    {
+    }, {
         path: '/mathOrientationTransform',
         name: 'mathOrientationTransform',
         component: MathOrientationTransform,
-    },
-    {
+    }, {
         path: '/camera',
         name: 'camera',
         component: Camera,
-    },
-    {
+    }, {
         path: '/happySpringFestival',
         name: 'happySpringFestival',
         component: HappySpringFestival
-    },
-    {
+    }, {
         path: '/billboard',
         name: 'billboard',
         component: Billboards,
-    },
-    {
+    }, {
         path: '/layers',
         name: 'layers',
         component: Layers,
-    },
-    {
+    }, {
         path: '/interactiveCube',
         name: 'interactiveCube',
         component: InteractiveCube,
-    },
-    {
+    }, {
         path: '/interactiveCubeGpu',
         name: 'interactiveCubeGpu',
         component: InteractiveCubeGpu,
-    },
-    {
+    }, {
         path: '/sprites',
         name: 'sprites',
         component: Sprites,
-    },
-    {
+    }, {
         path: '/drawingLine',
         name: 'drawingLine',
         component: DrawingLine,
-    },
-    {
+    }, {
         path: '/indexed',
         name: 'indexed',
         component: Indexed,
-    },
-    {
+    }, {
         path: '/lines',
         name: 'lines',
         component: Lines
-    },
-    {
+    }, {
         path: '/dashed',
         name: 'dashed',
         component: Dashed,
-    },
-    {
+    }, {
         path: '/text',
         name: 'text',
         component: Text,
-    },
-    {
+    }, {
         path: '/colors',
         name: 'colors',
         component: Colors
-    },
-    {
+    }, {
         path: '/convex',
         name: 'convex',
         component: Convex
-    },
-    {
+    }, {
         path: '/controls_orbit',
         name: 'controls_orbit',
         component: ControlsOrbit
-    },
-    {
+    }, {
         path: '/raycaster_sprite',
         name: 'raycaster_sprite',
         component: RaycasterSprite
-    },
-    {
+    }, {
         path: '/instancing_raycast',
         name: 'instancing_raycast',
         component: InstancingRaycast
-    },
-    {
+    }, {
         path: '/interactive_voxelpainter',
         name: 'interactive_voxelpainter',
         component: InteractiveVoxelpainter
-    },
-    {
+    }, {
         path: '/interactive_cubes_ortho',
         name: 'interactive_cubes_ortho',
         component: InteractiveCubesOrtho
-    },
-    {
+    }, {
         path: '/interactive_bufferGeometry',
         name: 'interactive_bufferGeometry',
         component: InteractiveBufferGeometry
-    },
-    {
+    }, {
         path: '/roadLight',
         name: 'roadLight',
         component: RoadLight
-    },
-    {
+    }, {
         path: '/earth3D',
         name: 'earth3D',
         component: Earth3D,
-    },
-    {
+    }, {
         path: '/chinaMap',
         name: 'chinaMap',
         component: ChinaMap,
+    }, {
+        path: '/extrude_shapes',
+        name: 'extrude_shapes',
+        component: ExtrudeShapes,
     }
 ]
 
