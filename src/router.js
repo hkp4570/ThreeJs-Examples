@@ -24,6 +24,7 @@ import InteractiveVoxelpainter from '@/views/webgl/Interactive_voxelpainter.vue'
 import InteractiveCubesOrtho from '@/views/webgl/Interactive_cubes_ortho.vue';
 import InteractiveBufferGeometry from '@/views/webgl/Interactive_bufferGeometry.vue';
 import RoadLight from '@/views/道路流光/index.vue';
+import Earth3D from '@/views/3D地球/index.vue';
 
 export const routes = [
     {
@@ -145,6 +146,11 @@ export const routes = [
         path: '/roadLight',
         name: 'roadLight',
         component: RoadLight
+    },
+    {
+        path: '/earth3D',
+        name: 'earth3D',
+        component: Earth3D,
     }
 ]
 
