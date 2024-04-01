@@ -29,6 +29,7 @@ import ChinaMap from '@/views/绘制中国地图/index.vue';
 import ExtrudeShapes from '@/views/Geometry/Extrude_shapes.vue';
 import SunEarthMoon from '@/views/模拟太阳地球月亮运动/index.vue';
 import Shapes from '@/views/Geometry/shapes.vue';
+import Skybox from '@/views/天空盒/index.vue';
 
 export const routes = [
     {
@@ -147,6 +148,10 @@ export const routes = [
         path: '/shapes',
         name: 'shapes',
         component: Shapes,
+    },{
+        path: '/skybox',
+        name: 'skybox',
+        component: Skybox,
     }
 ]
 
