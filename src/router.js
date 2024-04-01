@@ -30,6 +30,7 @@ import ExtrudeShapes from '@/views/Geometry/Extrude_shapes.vue';
 import SunEarthMoon from '@/views/模拟太阳地球月亮运动/index.vue';
 import Shapes from '@/views/Geometry/shapes.vue';
 import Skybox from '@/views/天空盒/index.vue';
+import MaterialsCubemapDynamic from '@/views/webgl/Materials_cubemap_dynamic.vue';
 
 export const routes = [
     {
@@ -144,14 +145,18 @@ export const routes = [
         path: '/sunEarthMoon',
         name: 'sunEarthMoon',
         component: SunEarthMoon,
-    },{
+    }, {
         path: '/shapes',
         name: 'shapes',
         component: Shapes,
-    },{
+    }, {
         path: '/skybox',
         name: 'skybox',
         component: Skybox,
+    }, {
+        path: '/materials_cubemap_dynamic',
+        name: 'materials_cubemap_dynamic',
+        component: MaterialsCubemapDynamic,
     }
 ]
 
