@@ -28,6 +28,7 @@ import Earth3D from '@/views/3D地球/index.vue';
 import ChinaMap from '@/views/绘制中国地图/index.vue';
 import ExtrudeShapes from '@/views/Geometry/Extrude_shapes.vue';
 import SunEarthMoon from '@/views/模拟太阳地球月亮运动/index.vue';
+import Shapes from '@/views/Geometry/shapes.vue';
 
 export const routes = [
     {
@@ -142,6 +143,10 @@ export const routes = [
         path: '/sunEarthMoon',
         name: 'sunEarthMoon',
         component: SunEarthMoon,
+    },{
+        path: '/shapes',
+        name: 'shapes',
+        component: Shapes,
     }
 ]
 
