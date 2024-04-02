@@ -31,6 +31,7 @@ import SunEarthMoon from '@/views/模拟太阳地球月亮运动/index.vue';
 import Shapes from '@/views/Geometry/shapes.vue';
 import Skybox from '@/views/天空盒/index.vue';
 import MaterialsCubemapDynamic from '@/views/webgl/Materials_cubemap_dynamic.vue';
+import IrregularShape from '@/views/绘制不规则图形/index.vue';
 
 export const routes = [
     {
@@ -157,6 +158,10 @@ export const routes = [
         path: '/materials_cubemap_dynamic',
         name: 'materials_cubemap_dynamic',
         component: MaterialsCubemapDynamic,
+    }, {
+        path: '/irregular_shape',
+        name: 'irregular_shape',
+        component: IrregularShape,
     }
 ]
 
