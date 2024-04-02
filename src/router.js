@@ -32,6 +32,7 @@ import Shapes from '@/views/Geometry/shapes.vue';
 import Skybox from '@/views/天空盒/index.vue';
 import MaterialsCubemapDynamic from '@/views/webgl/Materials_cubemap_dynamic.vue';
 import IrregularShape from '@/views/绘制不规则图形/index.vue';
+import MaterialsCubemapRefraction from '@/views/webgl/Materials_cubemap_refraction.vue';
 
 export const routes = [
     {
@@ -162,6 +163,10 @@ export const routes = [
         path: '/irregular_shape',
         name: 'irregular_shape',
         component: IrregularShape,
+    }, {
+        path: '/Materials_cubemap_refraction',
+        name: 'Materials_cubemap_refraction',
+        component: MaterialsCubemapRefraction,
     }
 ]
 
