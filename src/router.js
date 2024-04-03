@@ -33,6 +33,7 @@ import Skybox from '@/views/天空盒/index.vue';
 import MaterialsCubemapDynamic from '@/views/webgl/Materials_cubemap_dynamic.vue';
 import IrregularShape from '@/views/绘制不规则图形/index.vue';
 import MaterialsCubemapRefraction from '@/views/webgl/Materials_cubemap_refraction.vue';
+import ObjectCollision from '@/views/物体碰撞检测/index.vue';
 
 export const routes = [
     {
@@ -167,6 +168,10 @@ export const routes = [
         path: '/Materials_cubemap_refraction',
         name: 'Materials_cubemap_refraction',
         component: MaterialsCubemapRefraction,
+    }, {
+        path: '/object_collision',
+        name: 'object_collision',
+        component: ObjectCollision,
     }
 ]
 
