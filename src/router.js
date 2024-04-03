@@ -34,6 +34,7 @@ import MaterialsCubemapDynamic from '@/views/webgl/Materials_cubemap_dynamic.vue
 import IrregularShape from '@/views/绘制不规则图形/index.vue';
 import MaterialsCubemapRefraction from '@/views/webgl/Materials_cubemap_refraction.vue';
 import ObjectCollision from '@/views/物体碰撞检测/index.vue';
+import House from '@/views/绘制房子/index.vue';
 
 export const routes = [
     {
@@ -172,6 +173,10 @@ export const routes = [
         path: '/object_collision',
         name: 'object_collision',
         component: ObjectCollision,
+    }, {
+        path: '/house',
+        name: 'house',
+        component: House,
     }
 ]
 
