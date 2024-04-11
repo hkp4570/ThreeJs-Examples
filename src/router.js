@@ -35,6 +35,7 @@ import IrregularShape from '@/views/绘制不规则图形/index.vue';
 import MaterialsCubemapRefraction from '@/views/webgl/Materials_cubemap_refraction.vue';
 import ObjectCollision from '@/views/物体碰撞检测/index.vue';
 import House from '@/views/绘制房子/index.vue';
+import AnimationMixer from "@/views/AnimationMixer动画混合器/index.vue";
 
 export const routes = [
     {
@@ -177,6 +178,10 @@ export const routes = [
         path: '/house',
         name: 'house',
         component: House,
+    }, {
+        path: '/animationMixer',
+        name: 'animationMixer',
+        component: AnimationMixer,
     }
 ]
 
