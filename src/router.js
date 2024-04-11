@@ -36,6 +36,7 @@ import MaterialsCubemapRefraction from '@/views/webgl/Materials_cubemap_refracti
 import ObjectCollision from '@/views/物体碰撞检测/index.vue';
 import House from '@/views/绘制房子/index.vue';
 import AnimationMixer from "@/views/AnimationMixer动画混合器/index.vue";
+import AnimationMixerKeydownControl from '@/views/AnimationMixer动画混合器/键盘控制人物移动和攻击.vue';
 
 export const routes = [
     {
@@ -182,6 +183,10 @@ export const routes = [
         path: '/animationMixer',
         name: 'animationMixer',
         component: AnimationMixer,
+    },{
+        path: '/animationMixerKeydownControl',
+        name: 'animationMixerKeydownControl',
+        component: AnimationMixerKeydownControl
     }
 ]
 
