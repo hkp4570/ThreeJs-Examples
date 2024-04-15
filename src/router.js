@@ -38,6 +38,7 @@ import ObjectCollision from '@/views/物体碰撞检测/index.vue';
 import House from '@/views/绘制房子/index.vue';
 import AnimationMixerFBX from "@/views/AnimationMixer动画混合器/AnimationMixerFBX.vue";
 import AnimationMixerKeydownControl from '@/views/AnimationMixer动画混合器/键盘控制人物移动和攻击.vue';
+import Pisa from '@/views/webgl/Pisa.vue';
 
 export const routes = [
     {
@@ -168,6 +169,11 @@ export const routes = [
                 name: 'raycaster_sprite',
                 component: RaycasterSprite
             },
+            {
+                path: 'pisa',
+                name:'pisa',
+                component: Pisa,
+            }
         ]
     },
     {
