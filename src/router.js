@@ -39,6 +39,7 @@ import House from '@/views/绘制房子/index.vue';
 import AnimationMixerFBX from "@/views/AnimationMixer动画混合器/AnimationMixerFBX.vue";
 import AnimationMixerKeydownControl from '@/views/AnimationMixer动画混合器/键盘控制人物移动和攻击.vue';
 import Pisa from '@/views/webgl/Pisa.vue';
+import ObjectTravel from '@/views/物体沿路径行驶/index.vue';
 
 export const routes = [
     {
@@ -248,6 +249,11 @@ export const routes = [
         path: '/house',
         name: '绘制房子',
         component: House,
+    },
+    {
+      path: '/object_travel',
+      name: '物体沿路径行驶',
+      component: ObjectTravel,
     },
     {
         path: '/animationMixer',
