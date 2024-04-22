@@ -41,6 +41,7 @@ import AnimationMixerKeydownControl from '@/views/AnimationMixer动画混合器/
 import Pisa from '@/views/webgl/Pisa.vue';
 import ObjectTravel from '@/views/物体沿路径行驶/index.vue';
 import PanoramaCube from '@/views/webgl/Panorama_cube.vue';
+import ShaderOcean from '@/views/webgl/Shader_ocean.vue';
 
 export const routes = [
     {
@@ -180,6 +181,11 @@ export const routes = [
                 path: 'panorama_cube',
                 name: '全景立方体',
                 component: PanoramaCube,
+            },
+            {
+                path: 'shader_ocean',
+                name: '着色器_海洋',
+                component: ShaderOcean,
             }
         ]
     },
