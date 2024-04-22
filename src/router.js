@@ -40,6 +40,7 @@ import AnimationMixerFBX from "@/views/AnimationMixer动画混合器/AnimationMi
 import AnimationMixerKeydownControl from '@/views/AnimationMixer动画混合器/键盘控制人物移动和攻击.vue';
 import Pisa from '@/views/webgl/Pisa.vue';
 import ObjectTravel from '@/views/物体沿路径行驶/index.vue';
+import PanoramaCube from '@/views/webgl/Panorama_cube.vue';
 
 export const routes = [
     {
@@ -174,6 +175,11 @@ export const routes = [
                 path: 'pisa',
                 name:'pisa',
                 component: Pisa,
+            },
+            {
+                path: 'panorama_cube',
+                name: '全景立方体',
+                component: PanoramaCube,
             }
         ]
     },
