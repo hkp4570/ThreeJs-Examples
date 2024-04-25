@@ -42,6 +42,7 @@ import Pisa from '@/views/webgl/Pisa.vue';
 import ObjectTravel from '@/views/物体沿路径行驶/index.vue';
 import PanoramaCube from '@/views/webgl/Panorama_cube.vue';
 import ShaderOcean from '@/views/webgl/Shader_ocean.vue';
+import AnimationKeyframes from '@/views/webgl/Animation_keyframes.vue';
 
 export const routes = [
     {
@@ -122,6 +123,11 @@ export const routes = [
         name: 'webgl',
         component: Layouts,
         children: [
+            {
+                path: 'animation_keyframes',
+                name: 'animation_keyframes',
+                component: AnimationKeyframes,
+            },
             {
                 path: 'instancing_raycast',
                 name: 'instancing_raycast',
