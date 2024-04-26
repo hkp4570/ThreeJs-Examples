@@ -43,6 +43,7 @@ import ObjectTravel from '@/views/物体沿路径行驶/index.vue';
 import PanoramaCube from '@/views/webgl/Panorama_cube.vue';
 import ShaderOcean from '@/views/webgl/Shader_ocean.vue';
 import AnimationKeyframes from '@/views/webgl/Animation_keyframes.vue';
+import SkinningBlending from '@/views/webgl/Skinning_blending.vue';
 
 export const routes = [
     {
@@ -123,6 +124,11 @@ export const routes = [
         name: 'webgl',
         component: Layouts,
         children: [
+            {
+                path: 'skinning_blending',
+                name: 'skinning_blending',
+                component: SkinningBlending,
+            },
             {
                 path: 'animation_keyframes',
                 name: 'animation_keyframes',
