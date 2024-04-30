@@ -7,6 +7,8 @@ import GUI from 'lil-gui'
 let scene, renderer, camera, controls
 let clock, model, skeleton, mixer, actions, settings
 let idleAction, walkAction, runAction
+let singleStepMode = false // 是否处于单步模式
+let sizeOfNextStep = 0
 export default {
   mounted () {
     this.init()
@@ -14,6 +16,19 @@ export default {
   },
   methods: {
     init () {
+      settings = {
+        'show model': true,
+        'show skeleton': false,
+        'deactivate all': this.deactivateAllActions, // 停用所有动画
+        'activate all': this.activateAllActions,
+        'pause/continue': this.pauseContinue,
+        'make single step': this.toSingleStepMode,
+        'modify step size': 0.05,
+        'set custom duration': 3.5,
+        'modify idle weight': 0.0,
+        'modify walk weight': 1.0,
+        'modify run weight': 0.0,
+      }
       clock = new THREE.Clock()
       scene = new THREE.Scene()
       scene.background = new THREE.Color(0xa0a0a0)
@@ -91,20 +106,20 @@ export default {
       camera.updateProjectionMatrix()
       renderer.setSize(window.innerWidth, window.innerHeight)
     },
+
     createPanel () {
-      settings = {
-        'show model': true,
-        'show skeleton': false,
-        'set custom duration': 3.5,
-        'modify idle weight': 0.0,
-        'modify walk weight': 1.0,
-        'modify run weight': 0.0,
-      }
       const gui = new GUI({ width: 310 })
       const folder1 = gui.addFolder('Visibility')
+      const folder2 = gui.addFolder('Activation/Deactivation') // 激活/停用
+      const folder3 = gui.addFolder('Pausing/Stepping')  // 暂停/步进
       const folder5 = gui.addFolder('Blend Weights')
       folder1.add(settings, 'show model').onChange(this.showModal)
       folder1.add(settings, 'show skeleton').onChange(this.showSkeleton)
+      folder2.add(settings, 'deactivate all')
+      folder2.add(settings, 'activate all')
+      folder3.add(settings, 'pause/continue')
+      folder3.add(settings, 'make single step')
+      folder3.add( settings, 'modify step size', 0.01, 0.1, 0.001 );
       folder5.add(settings, 'modify idle weight', 0.0, 1.0, 0.01).listen().onChange(weight => {
         this.setWeight(idleAction, weight)
       })
@@ -115,6 +130,8 @@ export default {
         this.setWeight(runAction, weight)
       })
       folder1.open()
+      folder2.open()
+      folder3.open()
       folder5.open()
     },
     showModal (visibility) {
@@ -137,9 +154,48 @@ export default {
         action.play()
       })
     },
+    deactivateAllActions () {
+      actions.forEach(function (action) {
+        action.stop()
+      })
+    },
+    pauseContinue () {
+      if (singleStepMode) {
+        singleStepMode = false;
+        this.unPauseAllActions()
+      } else {
+        if (idleAction.paused) {
+          this.unPauseAllActions()
+        } else {
+          this.pauseAllActions()
+        }
+      }
+    },
+    pauseAllActions () {
+      actions.forEach(action => {
+        action.paused = true
+      })
+    },
+    unPauseAllActions () {
+      actions.forEach(action => {
+        action.paused = false
+      })
+    },
+    toSingleStepMode() {
+      this.unPauseAllActions();
+      singleStepMode = true;
+      sizeOfNextStep = settings[ 'modify step size' ];
+    },
     animate () {
       requestAnimationFrame(this.animate)
       let mixerUpdateDelta = clock.getDelta()
+
+      // 如果处于单步模式，则执行一步，然后不执行任何操作（直到用户再次单击）
+      if(singleStepMode){
+        mixerUpdateDelta = sizeOfNextStep
+        sizeOfNextStep = 0
+      }
+
       mixer.update(mixerUpdateDelta)
       renderer.render(scene, camera)
     }
