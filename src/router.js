@@ -44,6 +44,7 @@ import PanoramaCube from '@/views/webgl/Panorama_cube.vue';
 import ShaderOcean from '@/views/webgl/Shader_ocean.vue';
 import AnimationKeyframes from '@/views/webgl/Animation_keyframes.vue';
 import SkinningBlending from '@/views/webgl/Skinning_blending.vue';
+import CameraArray from '@/views/Camera/CameraArray.vue';
 
 export const routes = [
     {
@@ -96,7 +97,19 @@ export const routes = [
     {
         path: '/camera',
         name: 'camera',
-        component: Camera,
+        component: Layouts,
+        children: [
+            {
+                path: 'camera',
+                name: 'camera',
+                component: Camera,
+            },
+            {
+                path: 'cameraArray',
+                name: 'cameraArray',
+                component: CameraArray,
+            }
+        ]
     }, {
         path: '/happySpringFestival',
         name: 'happySpringFestival',
