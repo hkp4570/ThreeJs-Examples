@@ -45,6 +45,7 @@ import ShaderOcean from '@/views/webgl/Shader_ocean.vue';
 import AnimationKeyframes from '@/views/webgl/Animation_keyframes.vue';
 import SkinningBlending from '@/views/webgl/Skinning_blending.vue';
 import CameraArray from '@/views/Camera/CameraArray.vue';
+import Lensflares from '@/views/webgl/Lensflares.vue';
 
 export const routes = [
     {
@@ -137,6 +138,11 @@ export const routes = [
         name: 'webgl',
         component: Layouts,
         children: [
+            {
+                path: 'lensflares',
+                name: '镜头光晕',
+                component: Lensflares
+            },
             {
                 path: 'skinning_blending',
                 name: 'skinning_blending',
