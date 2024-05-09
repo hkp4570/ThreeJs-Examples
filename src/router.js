@@ -19,6 +19,7 @@ import Text from '@/views/Geometry/Text.vue';
 import Colors from "@/views/Geometry/Colors.vue";
 import Convex from "@/views/Geometry/Convex.vue";
 import ControlsOrbit from '@/views/misc/controls_orbit.vue';
+import ControlsFly from '@/views/misc/Controls_fly.vue';
 import RaycasterSprite from '@/views/webgl/Raycaster_sprite.vue';
 import InstancingRaycast from '@/views/webgl/Instancing_raycast.vue';
 import InteractiveVoxelpainter from '@/views/webgl/Interactive_voxelpainter.vue';
@@ -46,6 +47,7 @@ import AnimationKeyframes from '@/views/webgl/Animation_keyframes.vue';
 import SkinningBlending from '@/views/webgl/Skinning_blending.vue';
 import CameraArray from '@/views/Camera/CameraArray.vue';
 import Lensflares from '@/views/webgl/Lensflares.vue';
+import Controls_fly from '@/views/misc/Controls_fly.vue'
 
 export const routes = [
     {
@@ -249,9 +251,21 @@ export const routes = [
         ]
     },
     {
-        path: '/controls_orbit',
-        name: '轨道控制器',
-        component: ControlsOrbit
+      path: '/misc',
+      name: '控制器',
+      component: Layouts,
+      children: [
+        {
+            path: 'controls_orbit',
+            name: '轨道控制器',
+            component: ControlsOrbit
+        },
+        {
+            path: 'controls_fly',
+            name: '飞行控制器',
+            component: ControlsFly
+          }
+      ]
     },
     {
         path: '/roadLight',
