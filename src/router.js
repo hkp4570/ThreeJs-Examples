@@ -49,6 +49,7 @@ import CameraArray from '@/views/Camera/CameraArray.vue';
 import Lensflares from '@/views/webgl/Lensflares.vue';
 import Controls_fly from '@/views/misc/Controls_fly.vue';
 import Periodictable from '@/views/css3d/periodictable.vue'
+import SimpleAnimationMixer from '@/views/AnimationMixer动画混合器/简单物体动画.vue';
 
 export const routes = [
   {
@@ -339,7 +340,12 @@ export const routes = [
                 path: 'animationMixerKeydownControl',
                 name: 'animationMixerKeydownControl',
                 component: AnimationMixerKeydownControl
-            }
+            },
+          {
+            path: 'simpleAnimationMixer',
+            name: '简单物体动画',
+            component: SimpleAnimationMixer,
+          }
         ]
     },
 
