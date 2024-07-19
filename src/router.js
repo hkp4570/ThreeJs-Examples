@@ -47,9 +47,22 @@ import AnimationKeyframes from '@/views/webgl/Animation_keyframes.vue';
 import SkinningBlending from '@/views/webgl/Skinning_blending.vue';
 import CameraArray from '@/views/Camera/CameraArray.vue';
 import Lensflares from '@/views/webgl/Lensflares.vue';
-import Controls_fly from '@/views/misc/Controls_fly.vue'
+import Controls_fly from '@/views/misc/Controls_fly.vue';
+import Periodictable from '@/views/css3d/periodictable.vue'
 
 export const routes = [
+  {
+    path: '/css3d',
+    name: 'css3d',
+    component: Layouts,
+    children: [
+      {
+        path: 'periodictable',
+        name: '元素周期表',
+        component: Periodictable
+      }
+    ]
+  },
     {
         path: '/clippingIntersection',
         name: 'clippingIntersection',
