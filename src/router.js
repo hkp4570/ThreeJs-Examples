@@ -52,6 +52,7 @@ import Periodictable from '@/views/css3d/periodictable.vue'
 import SimpleAnimationMixer from '@/views/AnimationMixer动画混合器/简单物体动画.vue'
 import ParticleAnimation from '@/views/AnimationMixer动画混合器/粒子动画.vue'
 import Label from '@/views/css2d/label.vue'
+import Pdb from '@/views/css2d/pdb.vue'
 
 export const routes = [
   {
@@ -63,6 +64,11 @@ export const routes = [
         path: 'label',
         name: 'label',
         component: Label
+      },
+      {
+        path: 'pdb',
+        name: 'pdb',
+        component: Pdb
       }
     ]
   },
